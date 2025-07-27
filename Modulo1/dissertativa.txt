@@ -1,0 +1,2 @@
+A programação orientada a objetos é o paradigma mais indicado para implementar o sistema de gerenciamento de biblioteca, pois fornece uma estrutura organizada, modeladas em classes com propriedades; exibe relacionamentos naturais através de relações diretas entre as entidades; permite o reuso facilitando a manutenção e evolução do sistema; e, as regras para empréstimos, por exemplo, podem ser encapsuladas em métodos nas classes, o que facilita as validações, ajudando a proteger a integridade dos dados e do código.
+
