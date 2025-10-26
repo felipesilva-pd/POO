@@ -1,0 +1,33 @@
+import org.junit.jupiter.api.Test;
+import static org.junit.jupiter.api.Assertions.*;
+import java.util.*;
+
+public class EmprestimoTest {
+
+    Date dataRetirada = new Date();
+    Date dataDevolucao = new Date();
+    Livro livro = new Livro("Java Basics", new Autor("Alan Turing", "Inglês"), "Tecnologia", true);
+    Usuario usuario = new Usuario("Gabriel", 21);
+
+    @Test
+    public void testEmprestimoComLivroDisponivel() {
+        Emprestimo emprestimo = new Emprestimo(usuario, List.of(livro), dataRetirada, dataDevolucao);
+        assertEquals(1, emprestimo.getLivros().size());
+        assertFalse(livro.isDisponivel());
+        assertEquals(usuario, emprestimo.getUsuario());
+    }
+
+    @Test
+    public void testEmprestimoComLivroIndisponivel() {
+        livro.setDisponivel(false);
+        Emprestimo emprestimo = new Emprestimo(usuario, List.of(livro), dataRetirada, dataDevolucao);
+        assertEquals(0, emprestimo.getLivros().size());
+    }
+
+    @Test
+    public void testDatasEmprestimo() {
+        Emprestimo emprestimo = new Emprestimo(usuario, List.of(), dataRetirada, dataDevolucao);
+        assertEquals(dataRetirada, emprestimo.getDataRetirada());
+        assertEquals(dataDevolucao, emprestimo.getDataDevolucao());
+    }
+}
