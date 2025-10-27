@@ -9,6 +9,11 @@ public class Main {
 
         Usuario usuario = new Usuario("Lucas Rafael", 25);
 
+        Artigo artigo = new Artigo("Entendendo Compiladores", autor, "tecnologia", true);
+        System.out.println("\nArtigo: " + artigo.getTitulo());
+        System.out.println("Autor do Artigo: " + artigo.getAutor().getNome());
+        System.out.println("Publicado: " + artigo.isPublicado());
+
         List<Livro> livrosEmprestados = new ArrayList<>();
         livrosEmprestados.add(livro);
 
