@@ -1,0 +1,14 @@
+import org.junit.jupiter.api.Test;
+import static org.junit.jupiter.api.Assertions.*;
+
+public class AutorTest {
+
+    @Test
+    public void testAutorIsUsuarioFlag() {
+        Autor autorUsuario = new Autor("Lucas", 30, true);
+        Autor autorTradicional = new Autor("Maria", 45, false);
+
+        assertTrue(autorUsuario.isUsuario());
+        assertFalse(autorTradicional.isUsuario());
+    }
+}
